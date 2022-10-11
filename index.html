@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Buku Telepon</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container p-5">
+        <h1>Buku Telepon</h1>
+        <div class="form-group mb-3">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" name="nama" id="nama" aria-describedby="help-nama" placeholder="Masukan nama">
+            <small id="help-nama" class="form-text text-muted">Mohon masukan nama</small>
+        </div>
+        <div class="form-group mb-3">
+            <label for="nohp">No Hp</label>
+            <input type="text" class="form-control" name="nohp" id="nohp" aria-describedby="help-nohp" placeholder="Masukan no hp">
+            <small id="help-nohp" class="form-text text-muted">Mohon masukan no hp</small>
+        </div>
+        <button type="submit" class="btn btn-primary mb-5" onclick="createData()">Create</button>
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>No Hp</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <!-- Modal Edit Data -->
+    <div class="modal fade" id="edit-data" tabindex="-1" role="dialog" aria-labelledby="edit-data" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <h5>Buku Telepon</h5>
+                    <hr>
+                    <div class="form-group mb-3">
+                        <label for="editnama">Nama</label>
+                        <input type="text" class="form-control" name="editnama" id="editnama" aria-describedby="help-editnama" placeholder="Masukan editnama">
+                        <small id="help-editnama" class="form-text text-muted">Mohon masukan nama</small>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="editnohp">No Hp</label>
+                        <input type="text" class="form-control" name="editnohp" id="editnohp" aria-describedby="help-editnohp" placeholder="Masukan no hp">
+                        <small id="help-editnohp" class="form-text text-muted">Mohon masukan no hp</small>
+                    </div>
+                    <input type="hidden" id="key">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="updateData" onclick="updateData()">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+
+    <script defer src="./app.js"></script>
+</body>
+
+</html>
